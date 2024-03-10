@@ -1,0 +1,65 @@
+version: "3.0"
+services:
+  littlelink-server:
+    image: ghcr.io/techno-tim/littlelink-server:latest
+    # dockerhub is also supported timothystewart6/littlelink-server
+    # image: timothystewart6/littlelink-server:latest
+    container_name: littlelink-server
+    environment:
+      - META_TITLE=Trevor O'Leary
+      - META_DESCRIPTION=Engineer | Hobbiest | Music Maker? | Homelab | 🇺🇸 🇨🇦 | Full Nerd
+      - META_AUTHOR=Trevor Oleary
+      - META_KEYWORDS=HomeLab, HTML, CSS, Engineering, Spotify, Music, Trevor, Oleary
+      - LANG=en
+      - META_INDEX_STATUS=all
+      - OG_SITE_NAME=Trevor OLeary
+      - OG_TITLE=Trevor Oleary
+      - OG_DESCRIPTION=The home of Trevor Oleary
+      - OG_URL=https://link.trevoroleary.com
+      - OG_IMAGE=https://media.tenor.com/4A0Nel-xOFYAAAAi/dancing-letter-letter.gif
+      - OG_IMAGE_WIDTH=400
+      - OG_IMAGE_HEIGHT=400
+      - GA_TRACKING_ID=G-XXXXXXXXXX
+      - THEME=Dark
+      - FAVICON_URL=https://media.tenor.com/4A0Nel-xOFYAAAAi/dancing-letter-letter.gif
+      - AVATAR_URL=https://media.tenor.com/4A0Nel-xOFYAAAAi/dancing-letter-letter.gif
+      - AVATAR_2X_URL=https://media.tenor.com/4A0Nel-xOFYAAAAi/dancing-letter-letter.gif
+      - AVATAR_ALT=Trevor Oleary Profile Pic
+      - NAME=Trevor O'Leary
+      - BIO=Engineer | Hobbiest | Music Maker? | Homelab | 🇺🇸 🇨🇦 | Full Nerd
+      # use ENV variable names for order, listed buttons will be boosted to the top
+      - BUTTON_ORDER=YOUTUBE,SPOTIFY,DOCUMENTATION,LINKED_IN,GITHUB,INSTAGRAM
+      # you can render an unlimited amount of custom buttons by adding 
+      # the CUSTOM_BUTTON_* variables and by using a comma as a separator.
+      # - CUSTOM_BUTTON_TEXT=Documentation,Recommended Gear
+      # - CUSTOM_BUTTON_URL=https://l.technotim.live/docs,https://l.technotim.live/gear
+      # - CUSTOM_BUTTON_COLOR=#000000,#000000
+      # - CUSTOM_BUTTON_TEXT_COLOR=#ffffff,#ffffff
+      # - CUSTOM_BUTTON_ALT_TEXT=Tech documentation site for my videos and more,Recommended Gear
+      # - CUSTOM_BUTTON_NAME=DOCUMENTATION,GEAR
+      # - CUSTOM_BUTTON_ICON=fas file-alt,fas fa-cog
+      - CUSTOM_BUTTON_TEXT=Second Brain
+      - CUSTOM_BUTTON_URL=https://www.trevoroleary.com
+      - CUSTOM_BUTTON_COLOR=#000000
+      - CUSTOM_BUTTON_TEXT_COLOR=#ffffff
+      - CUSTOM_BUTTON_ALT_TEXT=Tech documentation site for my projects and more
+      - CUSTOM_BUTTON_NAME=DOCUMENTATION
+      - CUSTOM_BUTTON_ICON=fas file-alt
+      - YOUTUBE=https://www.youtube.com/channel/UCAe_We_k_6vLo2XhRnJmTBw
+      - GITHUB=https://github.com/trevoroleary
+      # - TWITTER=https://l.technotim.live/twitter
+      - INSTAGRAM=https://www.instagram.com/trevoroleary/?hl=en
+      - LINKED_IN=https://www.linkedin.com/in/trevor-oleary/
+      - SPOTIFY=https://open.spotify.com/artist/629Nd05cKkexjhvol4XT7V?si=XxcPp4BtQyikkowsNxeypA
+
+      # - TWITCH=https://l.technotim.live/twitch
+      # - DISCORD=https://l.technotim.live/discord
+      # - TIKTOK=https://l.technotim.live/tiktok
+      # - FACEBOOK=https://l.technotim.live/facebook
+      # - PATREON=https://l.technotim.live/patreon
+      - FOOTER=Trevor Oleary © 2023
+    ports:
+      - 8081:3000
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
