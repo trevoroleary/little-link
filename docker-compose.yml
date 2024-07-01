@@ -1,4 +1,3 @@
-version: "3.0"
 services:
   littlelink-server:
     image: ghcr.io/techno-tim/littlelink-server:latest
@@ -28,7 +27,7 @@ services:
       - NAME=Trevor O'Leary
       - BIO=Engineer | Hobbiest | Music Maker? | Homelab | 🇺🇸 🇨🇦 | Full Nerd
       # use ENV variable names for order, listed buttons will be boosted to the top
-      - BUTTON_ORDER=YOUTUBE,SPOTIFY,DOCUMENTATION,LINKED_IN,GITHUB,INSTAGRAM
+      - BUTTON_ORDER=YOUTUBE,PORTFOLIO,SPOTIFY,VIMEO,LINKED_IN,GITHUB,INSTAGRAM
       # you can render an unlimited amount of custom buttons by adding 
       # the CUSTOM_BUTTON_* variables and by using a comma as a separator.
       # - CUSTOM_BUTTON_TEXT=Documentation,Recommended Gear
@@ -38,12 +37,12 @@ services:
       # - CUSTOM_BUTTON_ALT_TEXT=Tech documentation site for my videos and more,Recommended Gear
       # - CUSTOM_BUTTON_NAME=DOCUMENTATION,GEAR
       # - CUSTOM_BUTTON_ICON=fas file-alt,fas fa-cog
-      - CUSTOM_BUTTON_TEXT=Second Brain
-      - CUSTOM_BUTTON_URL=https://www.trevoroleary.com
+      - CUSTOM_BUTTON_TEXT=Portfolio
+      - CUSTOM_BUTTON_URL=https://trevoroleary.com/all-projects
       - CUSTOM_BUTTON_COLOR=#000000
       - CUSTOM_BUTTON_TEXT_COLOR=#ffffff
       - CUSTOM_BUTTON_ALT_TEXT=Tech documentation site for my projects and more
-      - CUSTOM_BUTTON_NAME=DOCUMENTATION
+      - CUSTOM_BUTTON_NAME=PORTFOLIO
       - CUSTOM_BUTTON_ICON=fas file-alt
       - YOUTUBE=https://www.youtube.com/channel/UCAe_We_k_6vLo2XhRnJmTBw
       - GITHUB=https://github.com/trevoroleary
@@ -57,6 +56,7 @@ services:
       # - TIKTOK=https://l.technotim.live/tiktok
       # - FACEBOOK=https://l.technotim.live/facebook
       # - PATREON=https://l.technotim.live/patreon
+      - VIMEO=https://vimeo.com/user17742055
       - FOOTER=Trevor Oleary © 2023
     ports:
       - 8081:3000
